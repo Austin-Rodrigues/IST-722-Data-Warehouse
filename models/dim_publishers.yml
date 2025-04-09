@@ -1,0 +1,21 @@
+models:
+  - name: dim_publisher
+    description: One row per publisher.
+    columns:
+      - name: publisherkey
+        description: The surrogate key for the publisher
+        tests:
+          - not_null
+          - unique
+      - name: pub_id
+        description: fk to source table
+        tests:
+          - not_null
+      - name: pub_name
+        description: name of the publisher
+      - name: city
+        description: city the publisher based in
+      - name: state
+        description: state the publisher based in
+      - name: country
+        description: country the publisher based in

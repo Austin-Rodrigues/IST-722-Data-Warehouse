@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_title_sales
+    description: Sales fact table. One row per revenue per title.
+    columns:
+      - name: titleid
+        description: Source key for drill-through.
+      - name: titlekey
+        description: Dimension FK for dim_title
+      - name: total_qty
+        description: Total quantity of the each title sold. Additive
+      - name: total_discount
+        description: Additive fact for total discount on each title
+      - name: revenue_per_title
+        description: Additive fact for (price - discount amount) * quantity
+      - name: discountkey
+        description: Dimension FK for dim_discounts

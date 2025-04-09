@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_authors
+    description: Dimension model for `authors` table.
+    columns:
+      - name: authorskey
+        description: Surrogate key for the dimension table.
+        tests: [not_null, unique]
+      - name: au_id
+        description: Column `au_id` from `authors`.
+      - name: au_lname
+        description: Column `au_lname` from `authors`.
+      - name: au_fname
+        description: Column `au_fname` from `authors`.
+      - name: phone
+        description: Column `phone` from `authors`.
+      - name: address
+        description: Column `address` from `authors`.
+      - name: city
+        description: Column `city` from `authors`.
+      - name: state
+        description: Column `state` from `authors`.
+      - name: zip
+        description: Column `zip` from `authors`.
+      - name: contract
+        description: Column `contract` from `authors`.

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_titleauthor
+    description: Dimension-level information linking authors to titles.
+    columns:
+      - name: titleauthorkey
+        description: Surrogate key for title-author mapping.
+        tests: [not_null, unique]
+      - name: au_id
+        description: Author ID.
+      - name: title_id
+        description: Title ID.
+      - name: au_ord
+        description: Author order.
+      - name: royaltyper
+        description: Royalty percentage per author.

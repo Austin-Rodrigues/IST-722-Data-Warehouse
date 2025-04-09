@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_jobs
+    description: Dimension model for `jobs` table.
+    columns:
+      - name: jobskey
+        description: Surrogate key for the dimension table.
+        tests: [not_null, unique]
+      - name: job_id
+        description: Column `job_id` from `jobs`.
+      - name: job_desc
+        description: Column `job_desc` from `jobs`.
+      - name: min_lvl
+        description: Column `min_lvl` from `jobs`.
+      - name: max_lvl
+        description: Column `max_lvl` from `jobs`.

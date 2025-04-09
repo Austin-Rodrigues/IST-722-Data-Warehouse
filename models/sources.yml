@@ -1,0 +1,115 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: PUBS  # The correct parent database
+    schema: raw_conformed  # Your raw_conformed schema
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+
+  - name: pubs
+    database: PUBS  # The correct parent database
+    schema: raw  # Your raw schema for the tables
+
+    tables:
+      - name: authors
+        columns:
+          - name: au_id
+            tests:
+              - unique
+              - not_null
+
+      - name: discounts
+        columns:
+          - name: discounttype
+            tests: [not_null]
+          - name: stor_id
+          - name: lowqty
+          - name: highqty
+          - name: discount
+            tests: [not_null]
+
+      - name: employee
+        columns:
+          - name: emp_id
+            tests:
+              - unique
+              - not_null
+
+      - name: jobs
+        columns:
+          - name: job_id
+            tests:
+              - unique
+              - not_null
+
+      - name: publishers
+        columns:
+          - name: pub_id
+            tests:
+              - unique
+              - not_null
+
+      - name: pub_info
+        columns:
+          - name: pub_id
+            tests:
+              - unique
+              - not_null
+          - name: pr_info
+
+      - name: roysched
+        columns:
+          - name: title_id
+            tests:
+              - not_null
+          - name: lorange
+          - name: hirange
+          - name: royalty
+
+      - name: sales
+        columns:
+          - name: stor_id
+            tests: [not_null]
+          - name: ord_num
+            tests: [not_null]
+          - name: ord_date
+          - name: qty
+          - name: payterms
+          - name: title_id
+
+      - name: stores
+        columns:
+          - name: stor_id
+            tests:
+              - unique
+              - not_null
+          - name: stor_name
+          - name: city
+          - name: state
+          - name: zip
+
+      - name: titleauthor
+        columns:
+          - name: au_id
+            tests: [not_null]
+          - name: title_id
+            tests: [not_null]
+          - name: au_ord
+          - name: royaltyper
+
+      - name: titles
+        columns:
+          - name: title_id
+            tests:
+              - unique
+              - not_null
+          - name: title
+          - name: type
+          - name: pub_id
+          - name: price
+          - name: pubdate

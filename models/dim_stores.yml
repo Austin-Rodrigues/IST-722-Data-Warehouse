@@ -1,0 +1,23 @@
+models:
+  - name: dim_stores
+    description: different stores that sell these titles.One row per store.
+    columns:
+      - name: storekey
+        description: The surrogate key for the store_id
+        tests:
+          - not_null
+          - unique
+      - name: stor_id
+        description: The business / source key of the  store_id
+        tests:
+          - not_null
+      - name: stor_name
+        description: Name of the store
+      - name: stor_address
+        description: Address of the store
+      - name: city
+        description: city the store is based in
+      - name: state
+        description: state the store is based in
+      - name: zip
+        description: Zip code of the store

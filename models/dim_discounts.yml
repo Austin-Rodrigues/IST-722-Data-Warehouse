@@ -1,0 +1,22 @@
+models:
+  - name: dim_discounts
+    description: Different type of discounts.One row per discount.
+    columns:
+      - name: discountkey
+        description: The surrogate key for the discounts
+        tests:
+          - not_null
+          - unique
+      - name: discounttype
+        description: Type of discount
+      - name: stor_id
+        description: id of the store
+      - name: lowqty
+        description: Low quantity
+      - name: highqty
+        description: high quantity
+      - name: discount
+        description: discount percentage
+        tests:
+          - not_null
+          

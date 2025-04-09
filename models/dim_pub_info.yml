@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_pub_info
+    description: Dimension model for `pub_info` table.
+    columns:
+      - name: pub_infokey
+        description: Surrogate key for the dimension table.
+        tests: [not_null, unique]
+      - name: pub_id
+        description: Column `pub_id` from `pub_info`.
+      - name: pr_info
+        description: Column `pr_info` from `pub_info`.

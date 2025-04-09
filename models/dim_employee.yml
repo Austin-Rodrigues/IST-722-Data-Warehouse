@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_employee
+    description: Dimension model for `employee` table.
+    columns:
+      - name: employeekey
+        description: Surrogate key for the dimension table.
+        tests: [not_null, unique]
+      - name: emp_id
+        description: Column `emp_id` from `employee`.
+      - name: fname
+        description: Column `fname` from `employee`.
+      - name: minit
+        description: Column `minit` from `employee`.
+      - name: lname
+        description: Column `lname` from `employee`.
+      - name: job_id
+        description: Column `job_id` from `employee`.
+      - name: job_lvl
+        description: Column `job_lvl` from `employee`.
+      - name: pub_id
+        description: Column `pub_id` from `employee`.
+      - name: hire_date
+        description: Column `hire_date` from `employee`.

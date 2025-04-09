@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_sales
+    description: Dimension-level record for each sales transaction.
+    columns:
+      - name: saleskey
+        description: Surrogate key for sales record.
+        tests: [not_null, unique]
+      - name: stor_id
+        description: Store ID.
+      - name: ord_num
+        description: Order number.
+      - name: ord_date
+        description: Order date.
+      - name: qty
+        description: Quantity sold.
+      - name: payterms
+        description: Payment terms.
+      - name: title_id
+        description: Title ID.

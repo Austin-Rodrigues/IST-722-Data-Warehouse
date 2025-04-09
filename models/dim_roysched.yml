@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_roysched
+    description: Dimension model for `roysched` table.
+    columns:
+      - name: royschedkey
+        description: Surrogate key for the roysched table.
+        tests: 
+          - not_null
+          - unique  # Ensure uniqueness based on the combination of title_id, lorange, hirange, and royalty
+      - name: title_id
+        description: Title ID.
+      - name: lorange
+        description: Lower range of sales for royalty calculation.
+      - name: hirange
+        description: Upper range of sales for royalty calculation.
+      - name: royalty
+        description: Royalty percentage for the given range.

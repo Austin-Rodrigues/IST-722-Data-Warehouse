@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Fact model computing total revenue and units sold per store-title-date.
+    columns:
+      - name: storekey
+        description: Surrogate key of store.
+      - name: titlekey
+        description: Surrogate key of title.
+      - name: ord_date
+        description: Order date.
+      - name: total_units_sold
+        description: Sum of units sold on this date for this store and title.
+      - name: total_revenue
+        description: Total revenue generated from sales.

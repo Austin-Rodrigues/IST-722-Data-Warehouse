@@ -1,0 +1,17 @@
+models:
+  - name: fact_publisher
+    description: Accumulating Snapshot Fact Table.One row per publisher per author
+    columns:
+      - name: pub_id
+        description: source key for drill through.
+        tests:
+            - not_null
+      - name: publisherkey
+        description: Dimension FK for dim publisher
+      - name: number_of_titles
+        description: Factless fact, number of titles owned by each publisher
+      - name: titlekey
+        description: Dimension FK for dim title
+      - name: pubdate
+        description: date of publishing
+            

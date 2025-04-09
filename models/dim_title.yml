@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_title
+    description: Talk about the title of the books.One row per title.
+    columns:
+      - name: titlekey
+        description: The surrogate key for the title
+        tests:
+          - not_null
+          - unique
+      - name: title_id
+        description: The business / source key of the title
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: Name of the title
+        tests:
+          - not_null
+      - name: type
+        description: type of the book
+        tests:
+          - not_null
+      - name: pub_id
+        description: publisher id
+      - name: price
+        description: price of the particular title book
+      - name: advance
+        description: advance booking amount
+      - name: royalty
+        description: royalty on the title
+      - name: ytd_sales
+        description: number of sales per year
+      - name: notes
+        description: Notes
+      - name: pubdate
+        description: Date on which the title was published

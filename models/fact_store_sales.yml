@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fact_store_sales
+    description: sales fact table. Transaction Fact Table.One row per revenue per title.
+    columns:
+      - name: stor_id
+        description: source key for drill through.
+        tests:
+            - not_null
+      - name: storekey
+        description: dimension FK for dim_store
+      - name: revenue_date
+        description: Date when the revenue was generated
+      - name: total_quantity_sold_per_store
+        description: the quantity of titles sold per store. Additive
+      - name: total_discount_amount_per_store
+        description: discount for each store
+      - name: revenue_per_store
+        description: additive fact for  (price - discount)*quantity
+      - name: titlekey
+        description: Dimension FK for dim_title

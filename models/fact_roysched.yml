@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_roysched
+    description: Fact model aggregating roysched royalty bands per title.
+    columns:
+      - name: title_id
+        description: Foreign key to the title.
+      - name: titlekey
+        description: Surrogate key from titles.
+      - name: min_range
+        description: Minimum sales range across bands.
+      - name: max_range
+        description: Maximum sales range across bands.
+      - name: avg_royalty
+        description: Average royalty across sales ranges.
